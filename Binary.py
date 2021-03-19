@@ -51,8 +51,18 @@ def binarySearchRotatedArrayRecursive(array:List[int],low,high)->int:
     if low>high:
         return -1
     mid = low + (high-low)//2
-    if array[low] <= array[mid] and array[mid]>=array[high]:
+    if array[low] <= array[mid] and array[mid]<=array[high]:
         return low
+    prev = array[(mid-1+len(array))%(len(array))]
+    next = array[(mid+1)%(len(array))]
+    if array[mid]<=prev and array[mid]<=next:
+        return mid
+    elif array[mid]<array[high]:
+        high = mid-1
+        return binarySearchRotatedArrayRecursive(array,low,high)
+    elif array[mid]>array[low]:
+        low =mid+1
+        return binarySearchRotatedArrayRecursive(array,low,high)
 
 
 # Driver Code
@@ -66,3 +76,6 @@ print(binarySearchRecursive(array,0,len(array)-1,7))
 array = [10,18,-10,-4,-2,-1,1,8,9]
 print("Binary Search Rotated Array: ")
 print(binarySearchRotatedArray(array))
+
+print("Binary Search Rotated Array Recursive: ")
+print(binarySearchRotatedArrayRecursive(array,0,len(array)-1))
