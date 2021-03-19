@@ -46,6 +46,13 @@ def binarySearchRotatedArray(array:List[int])->int:
             low = mid+1
     return -1
 
+# Binary Search Rotated Sorted Array - Find how many times the array is rotated - Recursive
+def binarySearchRotatedArrayRecursive(array:List[int],low,high)->int:
+    if low>high:
+        return -1
+    mid = low + (high-low)//2
+    if array[low] <= array[mid] and array[mid]>=array[high]:
+        return low
 
 
 # Driver Code
