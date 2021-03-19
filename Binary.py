@@ -1,4 +1,5 @@
 from typing import List
+import RotatedArray
 
 # Binary Search Iterative
 def binarySearchIterative(array:List[int], target)->int:
@@ -79,3 +80,5 @@ print(binarySearchRotatedArray(array))
 
 print("Binary Search Rotated Array Recursive: ")
 print(binarySearchRotatedArrayRecursive(array,0,len(array)-1))
+
+RotatedArray
