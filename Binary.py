@@ -1,5 +1,6 @@
 from typing import List
 import RotatedArray
+import OccurenceOfNumber
 
 # Binary Search Iterative
 def binarySearchIterative(array:List[int], target)->int:
@@ -82,3 +83,4 @@ print("Binary Search Rotated Array Recursive: ")
 print(binarySearchRotatedArrayRecursive(array,0,len(array)-1))
 
 RotatedArray
+OccurenceOfNumber
